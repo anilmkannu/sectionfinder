@@ -1,11 +1,30 @@
+<div class="header">
+
+    <a routerLink="/" class="text-center">SECTIN FINDER.COM</a>
+
+   
+
+</div>
 
 
-<!-- HOME PAGE THUMBNAIL SECTION-->
-<app-main-page></app-main-page>
-<!-- HOME PAGE THUMBNAIL SECTION-->
+<div class="body">
+    <router-outlet></router-outlet>
+</div>
 
+<!-- FOOTER-->
+<footer class="text-center mt-5">
+    <p>
+        <a routerLink="/aboutus">About Us</a> |<a routerLink="/privacypolicy">Privacy Policy</a> |<a
+            routerLink="/termsofuse">Terms of Use</a></p>
+    <p>
+        <a href="#"> <i class="fa fa-facebook fa-2x"></i></a>
+        <a href="#"> <i class="fa fa-twitter fa-2x"></i></a>
 
+        <a href="#"> <i class="fa fa-pinterest fa-2x"></i></a>
 
-
-
-<router-outlet></router-outlet>
+    </p>
+    <p>&copy; Copyright 2021 SectionFinder Inc.<br />
+        <strong>Disclaimer:</strong> All the image shown in the websites does not relates to Section Finder these
+        are the sole property of their owner, each image source provided in every detail page</p>
+</footer>
+<!-- FOOTER-->

@@ -1,66 +1,50 @@
-<div class="container">
-    <h6 class="text-center">SECTIN FINDER.COM</h6>
-    <h1>
-        Search and get inspired by finding design Components online.
-
-    </h1>
-    <h5>Here you can find collection of thousand of trendy sections like headers, footers, testimonials etc. from
-        popular websites</h5>
-
-    <!-- SEARCH SECTION-->
-    <div class="d-flex flex-direction-row">
-        <input type="text" class="form-control" id="usr">
-        <div class="dropdown">
-            <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
-                Browse by element
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Link 1</a>
-                <a class="dropdown-item" href="#">Link 2</a>
-                <a class="dropdown-item-text" href="#">Text Link</a>
-                <span class="dropdown-item-text">Just Text</span>
-            </div>
+<h1>
+    {{topHeading}}
+</h1>
+<h5>Here you can find collection of thousand of trendy sections like headers, footers, testimonials etc. from
+    popular websites</h5>
+ <!-- SEARCH SECTION-->
+ <div class="d-flex flex-direction-row">
+    <input type="text" class="form-control" id="usr">
+    <div class="dropdown">
+        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+            Browse by element
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item-text" href="#">Text Link</a>
+            <span class="dropdown-item-text">Just Text</span>
         </div>
     </div>
-    <!-- SEARCH SECTION-->
+</div>
+<!-- SEARCH SECTION-->
 
-    <!-- THUMBNAIL SECTION MAIN-->
+<!-- THUMBNAIL SECTION MAIN-->
 
-    <div class="mt-5">
+<div class="mt-5">
 
     <!-- THUMBNAIL REPEAT-->
-        <figure class="figure mr-2" *ngFor="let item of thumbList">
-            <img width="300" height="300"
-                [src]="item.thumb"
-                class="figure-img img-fluid rounded" alt=" ">
-            <figcaption class="figure-caption text-dark">{{item.caption}}</figcaption>
-        </figure>
+    <figure class="figure mr-2" *ngFor="let item of thumbList">
+        <img width="300" height="300" [src]="item.thumb" class="figure-img img-fluid rounded" alt=" ">
+        <figcaption class="figure-caption text-dark">{{item.caption}}</figcaption>
+    </figure>
     <!-- THUMBNAIL REPEAT-->
 
-
-    </div>
-
-    <!-- THUMBNAIL SECTION MAIN-->
-
-
-    <!-- PAGINATOR-->
-    <div class="mt-2">
-        <ul class="pagination pagination-sm justify-content-center">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </div>
-    <!-- PAGINATOR-->
-
-    <!-- FOOTER-->
-<footer class="text-center mt-5">
-<p>About Us  |  Privacy Policy  |  Terms of Use</p>
-<p>&copy; Copyright 2021 SectionFinder Inc.<br/>
-        <strong>Disclaimer:</strong> All the image shown in the websites does not relates to Section Finder these are the  sole property of their owner, each image source provided in every detail page</p>
-</footer>
-    <!-- FOOTER-->
 
 </div>
+
+<!-- THUMBNAIL SECTION MAIN-->
+
+
+<!-- PAGINATOR-->
+<div class="mt-2">
+    <ul class="pagination pagination-sm justify-content-center">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</div>
+<!-- PAGINATOR-->

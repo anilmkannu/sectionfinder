@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  public topHeading:string = "Search and get inspired by finding design Components online.";
 
   public thumbList= [
     {"thumb":"https://www.theluxurysignature.com/wp-content/uploads/2015/03/Rambutan-Fruit.jpg", "caption":"FRUITS by basket"},
