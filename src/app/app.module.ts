@@ -7,6 +7,9 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 import { TermsofuseComponent } from './termsofuse/termsofuse.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { TermsofuseComponent } from './termsofuse/termsofuse.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
