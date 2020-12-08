@@ -24,4 +24,8 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  itemBtn(){
+    alert("Website details")
+  }
+
 }

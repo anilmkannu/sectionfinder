@@ -1,8 +1,8 @@
-<h1>
+<h1 class="text-center">
     {{topHeading}}
 </h1>
-<h5>Here you can find collection of thousand of trendy sections like headers, footers, testimonials etc. from
-    popular websites</h5>
+<h2 class="text-center">Here you can find collection of thousand of trendy sections like headers, footers, testimonials etc. from
+    popular websites</h2>
  <!-- SEARCH SECTION-->
  <div class="d-flex flex-direction-row">
     <input type="text" class="form-control" id="usr">
@@ -19,16 +19,15 @@
 
     </div>
 </div>
-<button mat-raised-button color="warn">Primary Button</button>
 
 <!-- SEARCH SECTION-->
 
 <!-- THUMBNAIL SECTION MAIN-->
 
-<div class="mt-5">
+<div class="mt-5 text-center">
 
     <!-- THUMBNAIL REPEAT-->
-    <figure class="figure mr-2" *ngFor="let item of thumbList">
+    <figure class="figure mr-2" *ngFor="let item of thumbList" ng-click="itemBtn()">
         <img width="300" height="300" [src]="item.thumb" class="figure-img img-fluid rounded" alt=" ">
         <figcaption class="figure-caption text-dark">{{item.caption}}</figcaption>
     </figure>
