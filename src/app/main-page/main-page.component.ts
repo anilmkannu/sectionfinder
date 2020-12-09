@@ -33,7 +33,6 @@ export class MainPageComponent implements OnInit, OnDestroy {
   }
 
   itemBtn(){
-    alert("Website details");
     this.router.navigate(['/productdetails']);
   }
 
