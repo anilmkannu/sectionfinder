@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { AddelementComponent } from './addelement/addelement.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import {HttpClientModule} from '@angular/common/http'
+
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
