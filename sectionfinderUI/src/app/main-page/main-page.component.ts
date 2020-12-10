@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import {ListingmainService} from '../services/listingmain.service';
 import {dataList} from 'src/assets/data/mainListing';
+import { ThumbhomepagelistingService } from '../services/thumbhomepagelisting.service';
 
 
 @Component({
@@ -21,12 +21,12 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private ListingmainService : ListingmainService,
+    private ThumbhomepagelistingService : ThumbhomepagelistingService,
 
   ) { }
 
   ngOnInit(): void {
-   this.ListingmainService.thumbListing()
+   this.ThumbhomepagelistingService.thumbListing()
    .subscribe(res => { this.thumItemListing = res
     console.log(this.thumItemListing);
   
@@ -34,11 +34,6 @@ export class MainPageComponent implements OnInit, OnDestroy {
     
     );
 
-
-   // console.log(this.thumbList.length);
-  //  this.ListingmainService.thumbListing()
-  //  .subscribe(data => data);
-   //this.thumbList = this.dataList;
   }
 
   itemBtn(){

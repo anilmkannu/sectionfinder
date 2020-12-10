@@ -27,9 +27,9 @@
 <div class="mt-5 text-center">
 
     <!-- THUMBNAIL REPEAT-->
-    <figure class="figure mr-2" *ngFor="let item of thumItemListing">
-       <h1>{{item.name}}</h1>
-       <h1>{{item.email}}</h1>
+    <figure class="figure mr-2" *ngFor="let item of thumItemListing" (click)="itemBtn()">
+       <img src="{{item.web_url}}" />
+       <h1>{{item.web_name}}</h1>
 
     </figure>
     <!-- THUMBNAIL REPEAT-->
