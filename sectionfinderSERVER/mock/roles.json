@@ -1,0 +1,16 @@
+
+  {
+    "name": 'Super Admin',
+    "code": 'SUPERADMIN',
+    "discription": 'for super Admin'
+  },
+  {
+    "name": 'Admin',
+    "code": 'ADMIN',
+    "discription": 'for Admin'
+  },
+  {
+    "name": 'User',
+    "code": 'USER',
+    "discription": 'for User'
+  }
