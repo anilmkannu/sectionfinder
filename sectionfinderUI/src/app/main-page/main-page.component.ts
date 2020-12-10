@@ -12,10 +12,12 @@ import {dataList} from 'src/assets/data/mainListing';
 export class MainPageComponent implements OnInit, OnDestroy {
   public topHeading:string = "Search and get inspired by finding design Components online.";
 
- 
-  public thumbList;
 
-  public dataList = dataList.dataArray;
+  thumItemListing: any;
+  //public thumbList;
+  
+
+  //public dataList = dataList.dataArray;
 
   constructor(
     private router: Router,
@@ -24,10 +26,19 @@ export class MainPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+   this.ListingmainService.thumbListing()
+   .subscribe(res => { this.thumItemListing = res
+    console.log(this.thumItemListing);
+  
+  }
+    
+    );
+
+
    // console.log(this.thumbList.length);
   //  this.ListingmainService.thumbListing()
   //  .subscribe(data => data);
-   this.thumbList = this.dataList;
+   //this.thumbList = this.dataList;
   }
 
   itemBtn(){

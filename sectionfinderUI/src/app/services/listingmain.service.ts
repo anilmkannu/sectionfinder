@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -7,13 +8,13 @@ import {HttpClient} from '@angular/common/http'
 })
 export class ListingmainService {
 
-  //public _url: string = "/assets/data/mainListing.json";
+  public url = "https://jsonplaceholder.typicode.com/users";
 
   constructor(private http:HttpClient) { }
 
-  // thumbListing() {
-  // // return this.http.get(this._url);
+  thumbListing(): Observable<any> {
   // return this.http.get(this._url);
+  return this.http.get(this.url);
 
-  // }
+  }
 }

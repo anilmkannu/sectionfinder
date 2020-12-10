@@ -27,10 +27,18 @@
 <div class="mt-5 text-center">
 
     <!-- THUMBNAIL REPEAT-->
-    <figure class="figure mr-2" *ngFor="let item of thumbList" (click)="itemBtn()">
+    <figure class="figure mr-2" *ngFor="let item of thumItemListing">
+       <h1>{{item.name}}</h1>
+       <h1>{{item.email}}</h1>
+
+    </figure>
+    <!-- THUMBNAIL REPEAT-->
+
+      <!-- THUMBNAIL REPEAT-->
+      <!-- <figure class="figure mr-2" *ngFor="let item of thumbList" (click)="itemBtn()">
         <img width="300" height="300" [src]="item.thumb" class="figure-img img-fluid rounded" alt=" ">
         <figcaption class="figure-caption text-dark">{{item.caption}}</figcaption>
-    </figure>
+    </figure> -->
     <!-- THUMBNAIL REPEAT-->
 
 
