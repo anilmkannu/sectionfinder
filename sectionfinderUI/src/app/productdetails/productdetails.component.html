@@ -21,16 +21,18 @@
 <!-- SEARCH SECTION-->
 
 <!-- WEBSITE DETAILS & THUMB-->
+
+
 <div class="row mt-5 height">
     <h1> {{thumbHomeItem.web_caption}}</h1>    
     <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1">
        <div class="border border-success p-3">
-           <img  src="{{thumbHomeItem.web_urlthumb}}" class="img-fluid" width="820">
+           <img  src="{{thumbHomeItem.web_urlthumb}}" class="img-fluid">
        </div>
     </div>
     <div class="col-lg-3 col-md-3">
-            <a href="{{thumbHomeItem.web_url}}" target="_blank" class="btn btn-danger btn-block mb-4">Launch</a>
-            <p>Courtesy : <a href="#" class="text-danger">{{thumbHomeItem.web_url}}</a></p>
+            <a href="{{thumbHomeItem.web_url}}" target="_blank" class="launch-btn mb-4"><span>Launch</span></a>
+            <p class="mt-4">Courtesy : <a href="#" class="text-danger">{{thumbHomeItem.web_url}}</a></p>
             <!-- <p>Element : <div class="border border-dark p-1 rounded"> Menu </div> </p> -->
             <p class="mt-4">Element : <span class="border border-secondary p-1 rounded"> {{thumbHomeItem.element}} </span></p>
 
