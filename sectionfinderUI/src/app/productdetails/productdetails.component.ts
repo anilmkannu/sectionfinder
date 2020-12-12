@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThumbhomedetailsService } from '../services/thumbhomedetails.service';
 
 @Component({
   selector: 'app-productdetails',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductdetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
 
+    private ThumbHomeDetails : ThumbhomedetailsService
+  ) { }
+
+  thumbHomeItem: any;
+
+
+ 
   ngOnInit(): void {
+    this.ThumbHomeDetails.thumbHomeDetails()
+      .subscribe(res => {
+      this.thumbHomeItem = res
+        console.log(this.thumbHomeItem);
+
+      }
+
+      );
+
   }
 
 }
