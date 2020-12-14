@@ -32,7 +32,6 @@
               "src/styles.scss",
               "node_modules/font-awesome/css/font-awesome.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
-              
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -133,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "sectionfinder"
+  "defaultProject": "sectionfinder",
+  "cli": {
+    "analytics": "f9f4d6a1-75dc-4086-8f1a-0074dcd5ed8b"
+  }
 }

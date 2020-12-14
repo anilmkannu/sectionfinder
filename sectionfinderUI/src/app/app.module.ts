@@ -32,7 +32,10 @@ import {HttpClientModule} from '@angular/common/http'
     MatButtonModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
