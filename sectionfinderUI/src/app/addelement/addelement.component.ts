@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AddElementService } from './add-element.service';
 
 @Component({
   selector: 'app-addelement',
@@ -6,10 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addelement.component.scss']
 })
 export class AddelementComponent implements OnInit {
+  addElementForm: FormGroup;
+  constructor(private fb: FormBuilder, private addElementService: AddElementService,private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.addElementFrom();
   }
-
+  private addElementFrom() {
+    this.addElementForm = this.fb.group({
+      categoryName : ["", Validators.required],
+      url : ["", Validators.required],
+      websiteName : ""
+    });
+  }
+    /**
+   * funcation name:
+   * craeted by:
+   * created date:
+   * functionality:
+   */
+  public addElement() {
+    this.addElementService.addElement(this.addElementForm.value).subscribe((data : any) => {
+      let res = <any>data;
+      if(res.type === 'success'){
+       // this.router.navigate(['dashboard']);
+      }else{
+        console.log('error')
+      }   
+    });
+  }
 }

@@ -6,11 +6,11 @@
        </div>
     </div>
     <div class="col-lg-3 col-md-3">
-            <form>
+      <form [formGroup]="addElementForm">  
 
             <div class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control">
+                    <select class="form-control" formControlName="categoryName">
                         <option>Header</option>
                         <option>About Us</option>
 
@@ -19,16 +19,16 @@
 
                   <div class="form-group mt-4">
                         <label for="url">From URL</label>
-                        <input type="text" class="form-control" id="url">
+                        <input type="text" class="form-control" id="url" formControlName="url">
                       </div>
 
                       <div class="form-group mt-4">
                             <label for="website">By (Company or Website Name)</label>
-                            <input type="text" class="form-control" id="website">
+                            <input type="text" class="form-control" id="website" formControlName="websiteName">
                           </div>
 
                           <div class="form-group mt-4">
-                              <Button class="btn btn-danger">Add Element</Button>
+                              <Button type="button" class="btn btn-danger" (click)="addElement()">Add Element</Button>
                               </div>
                           </form>
       </div>

@@ -11,7 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { AddelementComponent } from './addelement/addelement.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
-import {HttpClientModule} from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 
@@ -30,9 +32,11 @@ import {HttpClientModule} from '@angular/common/http'
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
 
     
   ],
