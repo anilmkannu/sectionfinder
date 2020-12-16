@@ -1,4 +1,4 @@
-<h1 class="text-center">
+<h1 class="text-center py-4">
     {{topHeading}}
 </h1>
 <h2 class="text-center">Here you can find collection of thousand of trendy sections like headers, footers, testimonials etc. from
@@ -7,17 +7,15 @@
  <div class="d-flex flex-direction-row">
     <input type="text" class="form-control" id="usr">
     <div class="dropdown">
-        <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
-            Browse by element
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Dropdown button
         </button>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item-text" href="#">Text Link</a>
-            <span class="dropdown-item-text">Just Text</span>
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
         </div>
-
-    </div>
+      </div>
 </div>
 
 <!-- SEARCH SECTION-->
@@ -29,7 +27,7 @@
     <!-- THUMBNAIL REPEAT-->
     <figure class="figure mr-2" *ngFor="let item of thumItemListing" (click)="itemBtn()">
        <img src="{{item.web_url}}" />
-       <h1>{{item.web_name}}</h1>
+       <h1 class="text-left">{{item.web_name}}</h1>
 
     </figure>
     <!-- THUMBNAIL REPEAT-->
