@@ -1,6 +1,6 @@
 
  <!-- SEARCH SECTION-->
- <div class="d-flex flex-direction-row">
+ <div class="d-flex flex-direction-row mt-4 search-section">
     <input type="text" class="form-control" id="usr">
     <div class="dropdown">
         <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
@@ -30,9 +30,9 @@
     </div>
     <div class="col-lg-3 col-md-3">
             <a href="{{thumbHomeItem.web_url}}" target="_blank" class="launch-btn mb-4"><span>Launch</span></a>
-            <p class="mt-4">Courtesy : <a href="#" class="text-danger">{{thumbHomeItem.web_url}}</a></p>
+            <p class="mt-4">Courtesy : <a href="#" class="text-danger">{{thumbHomeItem.web_url | slice:0:30}}</a></p>
             <!-- <p>Element : <div class="border border-dark p-1 rounded"> Menu </div> </p> -->
-            <p class="mt-4">Element : <span class="border border-secondary p-1 rounded"> {{thumbHomeItem.element}} </span></p>
+            <p class="mt-4 p-2">Element : <span class="border border-secondary p-1 rounded"> {{thumbHomeItem.element}} </span></p>
 
 
       </div>

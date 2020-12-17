@@ -22,6 +22,8 @@ export class ProductdetailsComponent implements OnInit {
       .subscribe(res => {
       this.thumbHomeItem = res
         console.log(this.thumbHomeItem);
+      
+
 
       }
 

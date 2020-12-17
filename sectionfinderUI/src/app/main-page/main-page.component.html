@@ -4,8 +4,8 @@
 <h2 class="text-center">Here you can find collection of thousand of trendy sections like headers, footers, testimonials etc. from
     popular websites</h2>
  <!-- SEARCH SECTION-->
- <div class="d-flex flex-direction-row">
-    <input type="text" class="form-control" id="usr">
+ <div class="d-flex flex-direction-row search-section">
+    <input type="text" class="form-control" id="usr" placeholder="Search by Category, Element">
     <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
           Dropdown button
@@ -25,7 +25,7 @@
 <div class="mt-5 text-center">
 
     <!-- THUMBNAIL REPEAT-->
-    <figure class="figure mr-2" *ngFor="let item of thumItemListing" (click)="itemBtn()">
+    <figure class="figure mr-4" *ngFor="let item of thumItemListing" (click)="itemBtn()">
        <img src="{{item.web_url}}" />
        <h1 class="text-left">{{item.element_name}} by {{item.web_name}}</h1>
 

@@ -42,3 +42,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	}
 }
 
+
+// pagination
+.pagination  {
+	a {
+		color: #000000;
+		@include pad-mix(10px 20px!important);
+		&:hover, &.active {
+			color: map-get($colors, white);
+			background: map-get($colors, logocolor);
+		}
+		
+	}
+}
+

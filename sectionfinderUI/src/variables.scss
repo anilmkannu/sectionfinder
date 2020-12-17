@@ -6,8 +6,19 @@ $colors: (
   orange: #ff851b,
   white: #ffffff,
   black: #000000,
-
-
+  logocolor:#EB3656,
 );
 
-// $red: yellow;
+
+// mixins
+
+@mixin bdr-all ($width, $style, $color) {
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+  
+}
+
+@mixin pad-mix($padding...) {
+  padding: $padding;
+ }

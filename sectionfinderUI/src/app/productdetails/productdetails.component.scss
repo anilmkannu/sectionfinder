@@ -1,0 +1,8 @@
+@import 'src/variables.scss';
+
+.search-section {
+    input {
+    @include bdr-all(2px, solid, $color:map-get($colors, black));
+    @include pad-mix (10px);
+    }
+}
