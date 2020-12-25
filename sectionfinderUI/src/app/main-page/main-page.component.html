@@ -18,13 +18,13 @@
       </div> -->
       <div class="dropdown">
         <button class="dropbtn">Browse by Element</button>
-        <div class="dropdown-content d-flex justify-content-between flex-wrap">
-          
+        <div class="dropdown-content">
+          <div class=" d-flex justify-content-between flex-wrap">
           <li *ngFor="let item of browseElement">
             <span> <input type="radio"  name="optradio"></span>
             <label class="ml-2">{{item.by_element}}</label>
           </li>
-
+        </div>
         </div>
       </div>
 </div>
