@@ -53,3 +53,4 @@ const secCategory = mongoose.Schema(
   );
 // create the model for roles and expose it to our app
 module.exports = mongoose.model("SecElement", SecElement);
+module.exports = mongoose.model("SecCategory", secCategory);
