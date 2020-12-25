@@ -14,6 +14,7 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -25,7 +26,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     PrivacypolicyComponent,
     TermsofuseComponent,
     AddelementComponent,
-    ProductdetailsComponent
+    ProductdetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

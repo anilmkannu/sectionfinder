@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThumbhomepagelistingService } from '../services/thumbhomepagelisting.service';
+import { BrowsecategoryService } from '../services/browsecategory.service';
 
 
 @Component({
@@ -13,14 +14,13 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
 
   thumItemListing: any;
-  //public thumbList;
-
-
-  //public dataList = dataList.dataArray;
+  
+  browseElement: any;
 
   constructor(
     private router: Router,
     private ThumbhomepagelistingService: ThumbhomepagelistingService,
+    private BrowsecategoryService : BrowsecategoryService,
 
   ) { }
 
@@ -29,6 +29,15 @@ export class MainPageComponent implements OnInit, OnDestroy {
       .subscribe(res => {
       this.thumItemListing = res
         console.log(this.thumItemListing);
+
+      }
+
+      );
+
+      this.BrowsecategoryService.categoryElementListing()
+      .subscribe(res => {
+      this.browseElement = res
+        console.log(this.browseElement);
 
       }
 

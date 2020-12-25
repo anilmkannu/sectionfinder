@@ -1,0 +1,18 @@
+@import 'src/variables';
+
+footer {
+    color: map-get($colors, black);
+    font-size: 14px;
+    a {
+    color: map-get($colors, black);
+    text-decoration: none;
+    padding: 0 10px;
+    &:hover {
+        color: map-get($colors, red)
+    }
+    &.active {
+        color: map-get($colors, red)
+    }
+    }
+   
+}
