@@ -29,8 +29,11 @@ const CreateSecElement = require("../models/secElements");
             categoryName: metaSchema.categoryName,
             url: metaSchema.url,
             websiteName: metaSchema.websiteName,
+            title : metaSchema.title,
+            
           }).save()
-          let dataObj = {};        
+          let dataObj = {};  
+          srcElem.title =    srcElem.websiteName + 'by' + srcElem.categoryName;
           dataObj = srcElem;
           requestHandler.sendSuccess(res, `Section Element Added Successfully...!!!`, 200, "success", dataObj)();
         }
