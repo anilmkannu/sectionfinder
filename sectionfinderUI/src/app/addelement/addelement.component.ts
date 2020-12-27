@@ -14,6 +14,7 @@ export class AddelementComponent implements OnInit {
 
   ngOnInit() {
     this.addElementFrom();
+
   }
   private addElementFrom() {
     this.addElementForm = this.fb.group({
@@ -31,11 +32,15 @@ export class AddelementComponent implements OnInit {
   public addElement() {
     this.addElementService.addElement(this.addElementForm.value).subscribe((data : any) => {
       let res = <any>data;
+      this.addElementForm.reset();
       if(res.type === 'success'){
        // this.router.navigate(['dashboard']);
+       
       }else{
         console.log('error')
       }   
     });
   }
+// this.addElementFrom.reset();  
+
 }

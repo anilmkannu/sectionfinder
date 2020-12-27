@@ -17,6 +17,8 @@ export class MainPageComponent implements OnInit, OnDestroy {
   
   browseElement: any;
 
+  itemTap:any;
+
   constructor(
     private router: Router,
     private ThumbhomepagelistingService: ThumbhomepagelistingService,
@@ -46,7 +48,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
   }
 
   itemBtn() {
-    this.router.navigate(['/productdetails']);
+   this.router.navigate(['/productdetails']);
+  //  this.itemTap = index;
+  //  console.log(this.itemTap);
   }
 
 
