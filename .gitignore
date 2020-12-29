@@ -44,3 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+sectionfinderSERVER/.vscode/launch.json
+sectionfinderSERVER/.vscode/launch.json
+*.json
+*.log
+*.png
