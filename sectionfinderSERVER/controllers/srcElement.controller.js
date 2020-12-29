@@ -30,14 +30,13 @@ const CreateSecElement = require("../models/secElements");
             categoryName: metaSchema.categoryName,
             url: metaSchema.url,
             websiteName: metaSchema.websiteName,
-            image : imageUrl + '/public/uploads/' + req.file.filename
-           // title : metaSchema.title,
-            
+            image : imageUrl + '/public/uploads/' + req.file.filename,
+            title : metaSchema.websiteName + 'by' + metaSchema.categoryName
           }).save()
-          let dataObj = {};  
-          srcElem.title =    srcElem.websiteName + 'by' + srcElem.categoryName;
-          dataObj = srcElem;
-          requestHandler.sendSuccess(res, `Section Element Added Successfully...!!!`, 200, "success", dataObj)();
+         // let dataObj = {};  
+          //srcElem.title =    srcElem.websiteName + 'by' + srcElem.categoryName;
+         // dataObj = srcElem;
+          requestHandler.sendSuccess(res, `Section Element Added Successfully...!!!`, 200, "success", srcElem)();
         }
         } catch (err) {
           return requestHandler.genericError( res, err.message, 404)(validation, validation);
