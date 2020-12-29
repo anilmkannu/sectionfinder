@@ -13,7 +13,9 @@ export class ThumbhomepagelistingService {
   ) { 
   }
 
-  public url = "https://my.api.mockaroo.com/productlisting.json?key=9b05f8f0";
+  //public url = "https://my.api.mockaroo.com/productlisting.json?key=9b05f8f0";
+  public url = "http://localhost:3003/api/section/element/list/";
+
 
   
   thumbListing(): Observable<any> {

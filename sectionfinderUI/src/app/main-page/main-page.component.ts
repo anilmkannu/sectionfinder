@@ -29,7 +29,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.ThumbhomepagelistingService.thumbListing()
       .subscribe(res => {
-      this.thumItemListing = res
+      this.thumItemListing = res.data
         console.log(this.thumItemListing);
 
       }

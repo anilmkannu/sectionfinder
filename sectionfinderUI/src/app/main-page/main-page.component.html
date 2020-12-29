@@ -40,8 +40,8 @@
 
     <!-- THUMBNAIL REPEAT-->
     <figure class="figure mr-4" *ngFor="let item of thumItemListing" (click)="itemBtn()">
-       <img src="{{item.web_url}}" />
-       <h1 class="text-left">{{item.element_name}} by {{item.web_name}}</h1>
+       <img src="{{item.image}}" />
+       <h1 class="text-left">{{item.categoryName}} by {{item.websiteName}}</h1>
 
     </figure>
 
