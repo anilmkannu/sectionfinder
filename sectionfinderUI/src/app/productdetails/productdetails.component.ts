@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThumbhomedetailsService } from '../services/thumbhomedetails.service';
+import { BrowsecategoryService } from '../services/browsecategory.service';
 
 @Component({
   selector: 'app-productdetails',
@@ -10,10 +11,13 @@ export class ProductdetailsComponent implements OnInit {
 
   constructor(
 
-    private ThumbHomeDetails : ThumbhomedetailsService
+    private ThumbHomeDetails : ThumbhomedetailsService,
+    private BrowsecategoryService: BrowsecategoryService
   ) { }
 
   thumbHomeItem: any;
+  browseElement: any;
+
 
 
  
@@ -24,6 +28,15 @@ export class ProductdetailsComponent implements OnInit {
         console.log(this.thumbHomeItem);
       
 
+
+      }
+
+      );
+
+      this.BrowsecategoryService.categoryElementListing()
+      .subscribe(res => {
+      this.browseElement = res
+        console.log(this.browseElement);
 
       }
 

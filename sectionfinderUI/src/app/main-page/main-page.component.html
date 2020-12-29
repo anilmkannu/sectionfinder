@@ -5,7 +5,7 @@
     popular websites</h2>
  <!-- SEARCH SECTION-->
  <div class="d-flex flex-direction-row search-section">
-    <input type="text" class="form-control" id="usr" placeholder="Search by Category, Element">
+    <input type="text"   class="form-control" id="usr" placeholder="Search by Category, Element">
     <!-- <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
           Dropdown button
@@ -17,7 +17,10 @@
         </div>
       </div> -->
       <div class="dropdown">
-        <button class="dropbtn">Browse by Element</button>
+        
+        <div class="dropbtn d-flex justify-content-between align-items-center">Browse by Element  
+            <i class="fa fa-angle-down fa-2x"></i>
+        </div>
         <div class="dropdown-content">
           <div class=" d-flex justify-content-between flex-wrap">
           <li *ngFor="let item of browseElement">
@@ -41,6 +44,8 @@
        <h1 class="text-left">{{item.element_name}} by {{item.web_name}}</h1>
 
     </figure>
+
+  
     <!-- THUMBNAIL REPEAT-->
 
       <!-- THUMBNAIL REPEAT-->
@@ -57,7 +62,17 @@
 </div>
 
 <!-- THUMBNAIL SECTION MAIN-->
-
+<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+  <div class="hovereffect">
+      <img class="img-responsive" src="http://placehold.it/350x200" alt="">
+          <div class="overlay">
+              <h2>Effect 11</h2>
+      <p>
+        <a href="#">LINK HERE</a>
+      </p>
+          </div>
+  </div>
+</div> -->
 
 <!-- PAGINATOR-->
 <div class="mt-2">

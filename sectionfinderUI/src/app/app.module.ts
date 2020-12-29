@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     TermsofuseComponent,
     AddelementComponent,
     ProductdetailsComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
