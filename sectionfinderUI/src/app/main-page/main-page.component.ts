@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThumbhomepagelistingService } from '../services/thumbhomepagelisting.service';
 import { BrowsecategoryService } from '../services/browsecategory.service';
-
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main-page',
@@ -18,21 +18,20 @@ export class MainPageComponent implements OnInit, OnDestroy {
   browseElement: any;
 
   itemTap:any;
+  apiUrl: any = 'http://localhost:3003/public/uploads';
 
   constructor(
     private router: Router,
     private ThumbhomepagelistingService: ThumbhomepagelistingService,
     private BrowsecategoryService : BrowsecategoryService,
-
+    private sanitization: DomSanitizer
   ) { }
 
   ngOnInit(): void {
     this.ThumbhomepagelistingService.thumbListing()
       .subscribe(res => {
-      this.thumItemListing = res.data
-        console.log(this.thumItemListing);
-
-      }
+      this.thumItemListing = res.data;
+       }
 
       );
 

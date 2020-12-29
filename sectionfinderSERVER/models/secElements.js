@@ -20,7 +20,7 @@ const SecElement = mongoose.Schema(
         title : {
             type: String,
         },  
-        image : {
+        imageName : {
           type: String,
       },      
       },

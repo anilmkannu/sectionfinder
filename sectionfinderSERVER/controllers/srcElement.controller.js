@@ -30,8 +30,7 @@ const CreateSecElement = require("../models/secElements");
             categoryName: metaSchema.categoryName,
             url: metaSchema.url,
             websiteName: metaSchema.websiteName,
-           // image : imageUrl + '/public/uploads/' + req.file.filename,
-            image : '/public/uploads/' + req.file.filename,
+            imageName : imageUrl + '/uploads/' + req.file.filename,
             title : metaSchema.websiteName + 'by' + metaSchema.categoryName
           }).save()
          // let dataObj = {};  
