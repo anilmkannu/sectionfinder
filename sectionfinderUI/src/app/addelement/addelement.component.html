@@ -4,7 +4,7 @@
        <div class="border border-danger p-3 ">
     <h1>Drag and Drop</h1>    
           <p>or browse from your device</p>
-          <input type="file" id="myFile" name="filename2">
+          <input type="file" id="file" (change)="uploadFiles($event.target.files)">
 
        </div>
     </div>

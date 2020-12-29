@@ -21,14 +21,16 @@ const CreateSecElement = require("../models/secElements");
    * date:14/12/2020
    ********************************************/
   (exports.creatSrcElement = async (req, res) => {
-    const metaSchema = req.body;
+    const metaSchema = JSON.parse(req.body.elementDTO);
+    const imageUrl = req.protocol + '://' + req.get('host')
     try{    
-    const validation = await validationSchema(metaSchema, SrcElememtJSON.creatSrcElement);
+   const validation = await validationSchema(metaSchema, SrcElememtJSON.creatSrcElement);
     if(!validation){
           const srcElem = await new CreateSecElement({
             categoryName: metaSchema.categoryName,
             url: metaSchema.url,
             websiteName: metaSchema.websiteName,
+            image : imageUrl + '/public/uploads/' + req.file.filename
            // title : metaSchema.title,
             
           }).save()

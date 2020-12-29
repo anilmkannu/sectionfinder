@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { stream } = require("winston");
 
 // define the schema for our Add Element Model
 const SecElement = mongoose.Schema(
@@ -18,7 +19,10 @@ const SecElement = mongoose.Schema(
         },  
         title : {
             type: String,
-        },        
+        },  
+        image : {
+          type: String,
+      },      
       },
       { timestamps: true }
     );
@@ -28,24 +32,10 @@ const SecElement = mongoose.Schema(
 // define the schema for our roles Model
 const secCategory = mongoose.Schema(
     {
-      categoryName: {
-          type: String,
-          trim: true,
-          required: true
-      },     
-      url:{
-        type: String,
-        trim: true,
-        required: true
-      },
-      websiteName: {
-          type: String,
-      },  
-      title : {
-          type: String,
-      },        
-    },
-    { timestamps: true }
+    name: String,
+    code: String,
+    id:String,
+    }
   );
 // create the model for roles and expose it to our app
 module.exports = mongoose.model("SecElement", SecElement);

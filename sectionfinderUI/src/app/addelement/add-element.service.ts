@@ -20,6 +20,13 @@ export class AddElementService extends CommonService {
    * functionality:
    */
   public addElement(reqObj){
-    return this.http.post(`${this.getAppBaseUrl()}${'api/section/element/create/'}`,reqObj,this.getConfig())
+    let headers = {
+      headers: {
+        'Access-Control-Allow-Origin':'*',
+        'Authorization': `Bearer ${'2312412412421dasdassdbdfn'}`
+      }
+    };
+
+    return this.http.post(`${this.getAppBaseUrl()}${'api/section/element/create/'}`,reqObj,headers)
   }
 }

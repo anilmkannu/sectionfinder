@@ -49,7 +49,6 @@ SrcElementController:{
         categoryName: {errExplain: 'Category Name is required',  type: 'string', minLength: 2,  maxLength:30, required: true },
         url: {errExplain: 'Url is required',type: "string", minLength: 2, maxLength: 30, required: true},
         websiteName: {type: "string"},
-        title : {type: "string"}
       }
     },
 }
