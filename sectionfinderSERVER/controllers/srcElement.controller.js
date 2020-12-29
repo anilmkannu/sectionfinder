@@ -43,3 +43,25 @@ const CreateSecElement = require("../models/secElements");
           return requestHandler.genericError( res, err.message, 404)(validation, validation);
         }
   });
+
+  /******************************************
+   * functionName: get Section Element 
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:29/12/2020
+   ********************************************/
+  (exports.getSrcElement = async (req, res) => {
+    try {
+      const getSecElement = await CreateSecElement.find();
+      return requestHandler.sendSuccess(
+        res,
+        `Element list proccessed successfully`,
+        200
+      )({
+        data: getSecElement
+      });
+    } catch (err) {
+      return requestHandler.sendError(req, res, err);
+    }
+  });
