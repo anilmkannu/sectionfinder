@@ -1,7 +1,7 @@
 <div class="row mt-5 height h-100">
     <h1>Add Element</h1>    
-    <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1">
-       <div class="border border-danger p-3 ">
+    <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1 browse-section">
+       <div class="rounded border-browse p-3 d-flex flex-column justify-content-center h-100 align-items-center">
     <h1>Drag and Drop</h1>    
           <p>or browse from your device</p>
           <input type="file" id="file" (change)="uploadFiles($event.target.files)">
@@ -33,7 +33,7 @@
                          
 
                           <div class="form-group mt-4">
-                              <Button type="button" class="btn btn-danger" (click)="addElement()">Add Element</Button>
+                              <Button type="button" class="btn btn-danger btn-lg" (click)="addElement()">Add Element</Button>
                               </div>
                           </form>
       </div>

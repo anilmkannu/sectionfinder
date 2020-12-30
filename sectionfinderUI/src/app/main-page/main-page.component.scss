@@ -2,6 +2,7 @@
 
 h1 {
     font-size: 40px;
+    font-weight: bold;
 }
 
 h2 {
@@ -12,6 +13,13 @@ h2 {
         font-size: 14px;
         font-weight: bold;
     }
+    img {
+      border-radius: 6px;
+    }
+    
+}
+.figure:last-child {
+  margin-right: 0!important;
 }
 
 .search-section {

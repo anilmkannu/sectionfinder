@@ -36,11 +36,11 @@
 
 <!-- THUMBNAIL SECTION MAIN-->
 
-<div class="mt-5 text-center">
+<div class="mt-5 d-flex flex-wrap">
 
     <!-- THUMBNAIL REPEAT-->
     <figure class="figure mr-4" *ngFor="let item of thumItemListing" (click)="itemBtn()">
-       <img [src]="item.imageName">
+       <img [src]="item.imageName" width="300" height="225">
        <h1 class="text-left">{{item.categoryName}} by {{item.websiteName}}</h1>
 
     </figure>
