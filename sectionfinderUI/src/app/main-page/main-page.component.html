@@ -39,11 +39,31 @@
 <div class="mt-5 d-flex flex-wrap">
 
     <!-- THUMBNAIL REPEAT-->
-    <figure class="figure mr-4" *ngFor="let item of thumItemListing" (click)="itemBtn()">
+
+   
+
+
+
+
+    <!-- <figure class="figure mr-4 " *ngFor="let item of thumItemListing" (click)="itemBtn()">
        <img [src]="item.imageName" width="300" height="225">
        <h1 class="text-left">{{item.categoryName}} by {{item.websiteName}}</h1>
 
-    </figure>
+    </figure> -->
+
+    <div class="row">
+        <div class="col-md-3"  *ngFor="let item of thumItemListing" (click)="itemBtn()">
+    <div class="content"> 
+          <div class="content-overlay"></div> 
+          <img [src]="item.imageName" width="320" height="225">
+          <h2>{{item.categoryName}} by {{item.websiteName}}</h2>
+
+          <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">View Website</h3>
+          </div>
+    </div>
+    </div>
+    </div>
 
   
     <!-- THUMBNAIL REPEAT-->
@@ -55,7 +75,7 @@
     </figure> -->
     <!-- THUMBNAIL REPEAT-->
 
-
+   
 
     
 
@@ -73,6 +93,10 @@
           </div>
   </div>
 </div> -->
+
+ <!-- DEMO 2 Item-->
+ 
+
 
 <!-- PAGINATOR-->
 <div class="mt-2">
