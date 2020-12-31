@@ -33,8 +33,10 @@ export class ProductdetailsComponent implements OnInit {
   ngOnInit(): void {
     this.ThumbHomeDetails.thumbHomeDetails(this.sectionId)
       .subscribe(res => {
-      this.thumbHomeItem = res
-        console.log(this.thumbHomeItem);
+        let resdata = <any>res;
+        if(resdata.type == 'success'){
+          this.thumbHomeItem  = resdata.data;
+        }
       }
 
       );
