@@ -35,5 +35,6 @@ var upload = multer({
 //router.post('/section/element/create', hasAuthToken, secEleController.secEleController);
 router.post('/section/element/create',  upload.single('file'), secEleController.creatSrcElement);
 router.get('/section/element/list', secEleController.getSrcElement);
+router.get('/section/element/list/:sectionId', secEleController.getSrcElementById);
 
 module.exports = router;

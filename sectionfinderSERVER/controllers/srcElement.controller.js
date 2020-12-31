@@ -84,5 +84,46 @@ const {CreateSecElement} = require('../models/secElements');
     }
   });
 
+  /******************************************
+   * functionName: get Section Element by Id
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:31/12/2020
+   ********************************************/
+  (exports.getSrcElementById = async (req, res) =>{
+    try {
+      const sectionId = req.params.sectionId;
+      const exit = await getSection(sectionId);
+      if (!exit) {
+        return requestHandler.genericError(res, `Section Not Found`, 404)();
+      }
+      const getSecElement = await CreateSecElement.findById(sectionId);
+      return requestHandler.sendSuccess(
+        res,
+        `Element list proccessed successfully`,
+        200
+      )({
+        data: getSecElement,
+      });
+    } catch (err) {
+      return requestHandler.sendError(req, res, err);
+    }
+  });
+
+
+  /**
+ * getSection will get info of requested plugin.
+ * @param {string} sectionId.
+ * @return {Object<Plugin>} return plugin of requested sectionId
+ */
+async function getSection(sectionId) {
+  return CreateSecElement.findOne({ _id: sectionId }).select("_id").lean();
+}
+
+
+
+
+
 
   
