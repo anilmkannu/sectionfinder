@@ -8,7 +8,6 @@ const app = express();
 app.use(cors({ origin: "http://localhost:4200"}));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-// app.use(express.static(__dirname+"./public"))
 app.use(express.static('public'))
 
 app.use(function (req, res, next) {

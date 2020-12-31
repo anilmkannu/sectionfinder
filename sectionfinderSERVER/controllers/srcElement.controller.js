@@ -9,7 +9,7 @@ const logger = new Logger();
 const requestHandler = new RequestHandler(logger);
 const SrcElememtJSON = require("../config/schema").SrcElementController.SrcElememtJSON;
 const validationSchema = require("../utils/JsonSchemaValidator").validationSchema;
-const CreateSecElement = require("../models/secElements");
+const {CreateSecElement} = require('../models/secElements');
 
 
 
