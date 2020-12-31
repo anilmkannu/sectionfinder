@@ -4,25 +4,11 @@ const { stream } = require("winston");
 // define the schema for our Add Element Model
 const SecElement = mongoose.Schema(
     {
-        categoryName: {
-            type: String,
-            trim: true,
-            required: true
-        },     
-        url:{
-          type: String,
-          trim: true,
-          required: true
-        },
-        websiteName: {
-            type: String,
-        },  
-        title : {
-            type: String,
-        },  
-        imageName : {
-          type: String,
-      },      
+        categoryName: {type: String, trim: true,required: true },     
+        url:{type: String, trim: true, required: true },
+        websiteName: {type: String},  
+        title : {type: String},  
+        imageName : {type: String},      
       },
       { timestamps: true }
     );
@@ -32,11 +18,16 @@ const SecElement = mongoose.Schema(
 // define the schema for our roles Model
 const secCategory = mongoose.Schema(
     {
-    name: String,
-    code: String,
-    id:String,
+       name: {type: String, required : true},
+       code: {type:String, required : true },
+       id: {type:String, required : true }
     }
   );
 // create the model for roles and expose it to our app
-module.exports = mongoose.model("SecElement", SecElement);
-//module.exports = mongoose.model("SecCategory", secCategory);
+const CreateSecElement = mongoose.model("SecElement", SecElement);
+const SecCategory = mongoose.model("SecCategory", secCategory);
+
+module.exports = {
+  CreateSecElement: CreateSecElement,
+  SecCategory: SecCategory
+}

@@ -49,3 +49,6 @@ sectionfinderSERVER/.vscode/launch.json
 *.json
 *.log
 *.png
+*.json
+*.json
+*.jpeg
