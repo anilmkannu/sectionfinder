@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'termsofuse', component: TermsofuseComponent },
   { path: 'privacypolicy', component: PrivacypolicyComponent },
   { path: 'addelement', component: AddelementComponent },
-  { path: 'productdetails', component: ProductdetailsComponent }
+  { path: 'productdetails/:sectionId', component: ProductdetailsComponent }
 
 
 

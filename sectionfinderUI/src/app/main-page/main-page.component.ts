@@ -23,11 +23,15 @@ export class MainPageComponent implements OnInit, OnDestroy {
   pageSize: number;
 
   constructor(
+
     private router: Router,
     private ThumbhomepagelistingService: ThumbhomepagelistingService,
     private BrowsecategoryService : BrowsecategoryService,
     private sanitization: DomSanitizer
-  ) { }
+  ) { 
+
+
+  }
 
   ngOnInit(): void {
     this.pageNo = 1;
@@ -53,8 +57,10 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   }
 
-  itemBtn() {
-   this.router.navigate(['/productdetails']);
+  itemBtn(sectionId) {
+    console.log(['/productdetails/', sectionId]);
+   this.router.navigate(['/productdetails/', sectionId]);
+  
   //  this.itemTap = index;
   //  console.log(this.itemTap);
   }

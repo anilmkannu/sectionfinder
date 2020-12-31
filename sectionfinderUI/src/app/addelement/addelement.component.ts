@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AddElementService } from './add-element.service';
+import * as $ from 'jquery' 
+
 
 @Component({
   selector: 'app-addelement',
@@ -16,6 +18,9 @@ export class AddelementComponent implements OnInit {
 
   ngOnInit() {
     this.addElementFrom();
+  //   $('#id').on('click', function() {
+  //     $('#yourinputname').trigger('click');
+  // });
 
   }
   private addElementFrom() {

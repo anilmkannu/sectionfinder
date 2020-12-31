@@ -13,11 +13,14 @@ export class ThumbhomedetailsService {
 
     }
 
-  public url = "https://my.api.mockaroo.com/productdetails.json?key=9b05f8f0";
+  //public url = "https://my.api.mockaroo.com/productdetails.json?key=9b05f8f0";
 
-  thumbHomeDetails(): Observable<any> {
- return this.http.get(this.url);
 
+  thumbHomeDetails(sectionId): Observable<any> {
+
+  let url = "http://localhost:3003/api/section/element/list/"  + sectionId ;
+
+ return this.http.get(url);
   }
 
   
