@@ -66,7 +66,7 @@ const {CreateSecElement} = require('../models/secElements');
       }
       const skip = size * (pageNo - 1)
       const limit = size
-      const getSecElement = await CreateSecElement.find({}).sort({ update_at: -1 }).skip(skip).limit(limit);
+      const getSecElement = await CreateSecElement.find({}).sort({ updatedAt: -1 }).skip(skip).limit(limit);
       const totalCount = await CreateSecElement.countDocuments({});
       return requestHandler.sendSuccess(
         res,
