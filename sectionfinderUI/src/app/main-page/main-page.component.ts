@@ -34,7 +34,10 @@ export class MainPageComponent implements OnInit, OnDestroy {
     this.pageSize = 4;
     this.ThumbhomepagelistingService.thumbListing(this.pageNo,this.pageSize)
       .subscribe(res => {
-      this.thumItemListing = res.data;
+          let resdata = <any>res;
+          if(resdata.type == 'success'){
+            this.thumItemListing  = resdata.data;
+          }
        }
 
       );
