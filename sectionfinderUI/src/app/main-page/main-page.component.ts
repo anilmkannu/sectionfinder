@@ -19,6 +19,8 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   itemTap:any;
   apiUrl: any = 'http://localhost:3003/public/uploads';
+  pageNo: number;
+  pageSize: number;
 
   constructor(
     private router: Router,
@@ -28,7 +30,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.ThumbhomepagelistingService.thumbListing()
+    this.pageNo = 1;
+    this.pageSize = 4;
+    this.ThumbhomepagelistingService.thumbListing(this.pageNo,this.pageSize)
       .subscribe(res => {
       this.thumItemListing = res.data;
        }

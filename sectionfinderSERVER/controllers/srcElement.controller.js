@@ -52,15 +52,37 @@ const {CreateSecElement} = require('../models/secElements');
    ********************************************/
   (exports.getSrcElement = async (req, res) => {
     try {
-      const getSecElement = await CreateSecElement.find();
+      var pageNo = parseInt(req.query.pageNo) || 0;
+      var size = parseInt(req.query.pageSize) || 4;
+      var query = {};
+      if(pageNo < 0 || pageNo === 0) {
+            response = {"error" : true,"message" : "invalid page number, should start with 1"};
+            return res.json(response)
+            return requestHandler.sendSuccess(
+              response,
+              `invalid page number, should start with 1`,
+              405
+            )
+      }
+      const skip = size * (pageNo - 1)
+      const limit = size
+      const getSecElement = await CreateSecElement.find({}).sort({ update_at: -1 }).skip(skip).limit(limit);
+      const totalCount = await CreateSecElement.countDocuments({});
       return requestHandler.sendSuccess(
         res,
         `Element list proccessed successfully`,
         200
       )({
-        data: getSecElement
+        data: getSecElement,
+        totalCount:totalCount,
+        pageNo:pageNo,
+        pageSize:getSecElement.length
+
       });
     } catch (err) {
       return requestHandler.sendError(req, res, err);
     }
   });
+
+
+  

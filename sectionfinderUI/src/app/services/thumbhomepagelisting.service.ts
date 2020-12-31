@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CommonService } from '../common/common.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ThumbhomepagelistingService {
+export class ThumbhomepagelistingService extends CommonService{
 
-  constructor(
-    private http:HttpClient
-
+constructor(
+    private http: HttpClient
   ) { 
+    super();
   }
 
-  //public url = "https://my.api.mockaroo.com/productlisting.json?key=9b05f8f0";
-  public url = "http://localhost:3003/api/section/element/list/";
-
-
-  
-  thumbListing(): Observable<any> {
-    // return this.http.get(this._url);
-    return this.http.get(this.url);
-  
-    }
+  /**
+   * funcation name:
+   * craeted by:
+   * created date:
+   * functionality:
+   */
+  public thumbListing(pageNo,pageSize){
+    return this.http.get(`${this.getAppBaseUrl()}${'api/section/element/list/'}`+ '?pageNo=' +pageNo +'&pageSize='+pageSize)
+  }
 }
 
 
