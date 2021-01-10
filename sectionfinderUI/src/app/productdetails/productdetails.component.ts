@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThumbhomedetailsService } from '../services/thumbhomedetails.service';
-import { BrowsecategoryService } from '../services/browsecategory.service';
+import { CategoryService } from '../services/category.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProductdetailsComponent implements OnInit {
   constructor(
 
     private ThumbHomeDetails : ThumbhomedetailsService,
-    private BrowsecategoryService: BrowsecategoryService,
+    private categoryService: CategoryService,
     private route:ActivatedRoute,
   ) { 
 
@@ -45,10 +45,14 @@ export class ProductdetailsComponent implements OnInit {
 
       );
 
-      this.BrowsecategoryService.categoryElementListing()
+      this.categoryService.categoryElementListing()
       .subscribe(res => {
-      this.browseElement = res
-        console.log(this.browseElement);
+        this.categoryService.categoryElementListing().subscribe((res) => {
+          let resdata = <any>res;
+          if (resdata.type == "success") {
+            this.browseElement = resdata.data;
+          }
+        });
 
       }
 

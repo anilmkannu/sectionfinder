@@ -27,11 +27,11 @@
       <i class="fa fa-angle-down fa-2x"></i>
     </div>
     <ul class="dropdown-content">
-    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <input class="form-control" id="_id" type="text"  placeholder="Search..">
     <li *ngFor="let item of browseElement">
       <a href="#">
         <!-- <span> <input type="radio" name="optradio"></span> -->
-        <label class="ml-2">{{item.by_element}}</label>
+        <label class="ml-2">{{item.name}}</label>
       </a>
       </li>
     </ul>
