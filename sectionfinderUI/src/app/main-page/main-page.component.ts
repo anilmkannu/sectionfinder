@@ -35,7 +35,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.pageNo = 1;
-    this.pageSize = 4;
+    this.pageSize = 8;
     this.ThumbhomepagelistingService.thumbListing(this.pageNo,this.pageSize)
       .subscribe(res => {
           let resdata = <any>res;

@@ -81,15 +81,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: none;
     position: absolute;
     background-color: #ffffff;
-    width: 500px;
+    width:260px;
     z-index: 1;
     @include bdr-all(2px, solid , #000000);
     right: 0;
     border-radius: (6px);
-    @include pad-mix(20px);
+    @include pad-mix(0);
 
     li {
-        width: 150px;
+        width: 100%;
         list-style: none;
         font-weight: bold;
        
@@ -100,17 +100,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   
   .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding:10px 15px;
     text-decoration: none;
     display: block;
   }
   
   .dropdown-content a:hover {
-      background-color: #ddd;
+      background-color: #eb3756;
+      color: #ffffff;
 
     }
   
-  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropdown-content {display: block;
+  height: 200px;
+  overflow: scroll;
+  }
   
   .dropdown:hover .dropbtn {
       background-color: #ffffff;

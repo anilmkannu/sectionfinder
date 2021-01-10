@@ -34,9 +34,13 @@ export class ProductdetailsComponent implements OnInit {
     this.ThumbHomeDetails.thumbHomeDetails(this.sectionId)
       .subscribe(res => {
         let resdata = <any>res;
+
         if(resdata.type == 'success'){
           this.thumbHomeItem  = resdata.data;
+          
         }
+        console.log(this.thumbHomeItem);
+
       }
 
       );

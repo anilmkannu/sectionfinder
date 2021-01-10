@@ -30,6 +30,13 @@ h2 {
     @include pad-mix (10px);
     margin-right: 20px;
     }
+    #myInput {
+      padding:10px 15px;
+      margin-top: -6px;
+      border: 0;
+      border-radius: 0;
+      background: #f1f1f1;
+    }
 }
 
 .content {
