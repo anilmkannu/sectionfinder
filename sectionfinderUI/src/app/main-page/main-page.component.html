@@ -58,7 +58,7 @@
     </figure> -->
 
   <div class="row">
-    <div class="col-md-3" *ngFor="let item of thumItemListing" (click)="itemBtn(item._id)">
+    <div class="col-md-3" *ngFor="let item of thumItemListing  | paginate: config" (click)="itemBtn(item._id)">
       <div class="content">
         <div class="content-overlay"></div>
         <img [src]="item.imageName" width="320" height="225">
@@ -105,7 +105,10 @@
 
 
 <!-- PAGINATOR-->
-<div class="mt-2">
+<div>
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+  </div>
+<!-- <div class="mt-2">
   <ul class="pagination pagination-sm justify-content-center">
     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
     <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -114,7 +117,7 @@
     <li class="page-item"><a class="page-link" href="#">4</a></li>
     <li class="page-item"><a class="page-link" href="#">Next</a></li>
   </ul>
-</div>
+</div> -->
 <!-- PAGINATOR-->
 
 <!-- <script>
