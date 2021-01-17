@@ -64,6 +64,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
     //  this.itemTap = index;
     //  console.log(this.itemTap);
   }
+  pageChanged(pageChangeItem){
+
+  }
 
   ngOnDestroy(): void {}
 }
