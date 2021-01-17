@@ -22,7 +22,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
   pageNo: number;
   pageSize: number;
   config: any;
-  collection = { count: 50, data: [] };
+  totalCount: number;
 
   constructor(
     private router: Router,
@@ -33,17 +33,8 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.pageNo = 1;
-    this.pageSize = 8;
-    this.ThumbhomepagelistingService.thumbListing(
-      this.pageNo,
-      this.pageSize
-    ).subscribe((res) => {
-      let resdata = <any>res;
-      if (resdata.type == "success") {
-        this.thumItemListing = resdata.data;
-      }
-    });
-
+    this.pageSize = 3;
+    this.getDashBoardData();
     this.categoryService.categoryElementListing().subscribe((res) => {
       let resdata = <any>res;
       if (resdata.type == "success") {
@@ -51,12 +42,39 @@ export class MainPageComponent implements OnInit, OnDestroy {
       }
     });
     this.config = {
-      itemsPerPage:3,
-      currentPage: 1,
-      totalItems: this.collection.count
+      itemsPerPage: this.pageSize,
+      currentPage: this.pageNo,
+      totalItems: this.totalCount,
     };
   }
-
+  /******************************************
+   * functionName: get Category Element
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:10/01/2021
+   ********************************************/
+  getDashBoardData() {
+    this.ThumbhomepagelistingService.thumbListing(this.pageNo,this.pageSize).subscribe((res) => {
+      let resdata = <any>res;
+      if (resdata.type == "success") {
+        this.thumItemListing = resdata.data;
+        this.totalCount = resdata.totalCount;
+        this.config = {
+          itemsPerPage: this.pageSize,
+          currentPage: this.pageNo,
+          totalItems: this.totalCount,
+        };
+      }
+    });
+  }
+  /******************************************
+   * functionName: get Category Element
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:10/01/2021
+   ********************************************/
   itemBtn(sectionId) {
     console.log(["/productdetails/", sectionId]);
     this.router.navigate(["/productdetails/", sectionId]);
@@ -64,8 +82,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
     //  this.itemTap = index;
     //  console.log(this.itemTap);
   }
-  pageChanged(pageChangeItem){
-
+  pageChanged(pageChangeItem) {
+    this.pageNo = pageChangeItem;
+    this.getDashBoardData();
   }
 
   ngOnDestroy(): void {}

@@ -74,7 +74,7 @@ const {CreateSecElement,SecCategory} = require('../models/secElements');
   (exports.getSrcElement = async (req, res) => {
     try {
       var pageNo = parseInt(req.query.pageNo) || 0;
-      var size = parseInt(req.query.pageSize) || 4;
+      var size = parseInt(req.query.pageSize) || 3;
       var query = {};
       if(pageNo < 0 || pageNo === 0) {
             response = {"error" : true,"message" : "invalid page number, should start with 1"};
