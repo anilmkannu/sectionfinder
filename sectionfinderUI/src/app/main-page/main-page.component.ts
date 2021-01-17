@@ -21,6 +21,8 @@ export class MainPageComponent implements OnInit, OnDestroy {
   apiUrl: any = "http://localhost:3003/public/uploads";
   pageNo: number;
   pageSize: number;
+  config: any;
+  collection = { count: 50, data: [] };
 
   constructor(
     private router: Router,
@@ -48,6 +50,11 @@ export class MainPageComponent implements OnInit, OnDestroy {
         this.browseElement = resdata.data;
       }
     });
+    this.config = {
+      itemsPerPage:3,
+      currentPage: 1,
+      totalItems: this.collection.count
+    };
   }
 
   itemBtn(sectionId) {
@@ -56,6 +63,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
     //  this.itemTap = index;
     //  console.log(this.itemTap);
+  }
+  pageChanged(pageChangeItem){
+
   }
 
   ngOnDestroy(): void {}
