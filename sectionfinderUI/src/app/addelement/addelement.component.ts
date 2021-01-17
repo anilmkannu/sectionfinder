@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AddElementService } from './add-element.service';
 import * as $ from 'jquery' 
+import { CategoryService } from '../services/category.service';
 
 
 @Component({
@@ -13,14 +14,13 @@ import * as $ from 'jquery'
 export class AddelementComponent implements OnInit {
   addElementForm: FormGroup;
   formData = new FormData();
+  categoryData: any = [];
 
-  constructor(private fb: FormBuilder, private addElementService: AddElementService,private router: Router) {}
+  constructor(private fb: FormBuilder, private addElementService: AddElementService,private router: Router, private categoryService :CategoryService) {}
 
   ngOnInit() {
     this.addElementFrom();
-  //   $('#id').on('click', function() {
-  //     $('#yourinputname').trigger('click');
-  // });
+    this.getCategory();
 
   }
   private addElementFrom() {
@@ -30,6 +30,8 @@ export class AddelementComponent implements OnInit {
       websiteName : ""
     });
   }
+
+
     /**
    * funcation name:
    * craeted by:
@@ -68,4 +70,40 @@ export class AddelementComponent implements OnInit {
         this.formData.append( "file", file[i], file[i]['name'] );
     }
 }
+    /**
+   * funcation name:
+   * craeted by:
+   * created date:
+   * functionality:
+   */
+
+  getCategory(){
+    this.categoryService.categoryElementListing().subscribe((res) => {
+      let resdata = <any>res;
+      if (resdata.type == "success") {
+        this.categoryData = resdata.data;
+      }
+    });
+  }
+    /**
+   * funcation name:
+   * craeted by:
+   * created date:
+   * functionality:
+   */
+  changeCategory(e){
+    this.addElementForm.patchValue(e.target.value, {
+      onlySelf: true
+    })
+  }
+    /**
+   * funcation name:
+   * craeted by:
+   * created date:
+   * functionality:
+   */
+  // Getter method to access formcontrols
+  get getCategoryName() {
+    return this.addElementForm.get('categoryName');
+  }
 }

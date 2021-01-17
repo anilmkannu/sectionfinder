@@ -26,8 +26,9 @@ const {CreateSecElement,SecCategory} = require('../models/secElements');
     try{    
    const validation = await validationSchema(metaSchema, SrcElememtJSON.creatSrcElement);
     if(!validation){
+        //console.log(await SecCategory.findOne({_id : metaSchema.categoryName._id}));
           const srcElem = await new CreateSecElement({
-            categoryName: metaSchema.categoryName,
+            categoryName: metaSchema.categoryName._id,
             url: metaSchema.url,
             websiteName: metaSchema.websiteName,
             imageName : imageUrl + '/uploads/' + req.file.filename,
@@ -86,7 +87,7 @@ const {CreateSecElement,SecCategory} = require('../models/secElements');
       }
       const skip = size * (pageNo - 1)
       const limit = size
-      const getSecElement = await CreateSecElement.find({}).sort({ updatedAt: -1 }).skip(skip).limit(limit);
+      const getSecElement = await CreateSecElement.find({}).populate('categoryName').sort({ updatedAt: -1 }).skip(skip).limit(limit);
       const totalCount = await CreateSecElement.countDocuments({});
       return requestHandler.sendSuccess(
         res,
@@ -118,7 +119,7 @@ const {CreateSecElement,SecCategory} = require('../models/secElements');
       if (!exit) {
         return requestHandler.genericError(res, `Section Not Found`, 404)();
       }
-      const getSecElement = await CreateSecElement.findById(sectionId);
+      const getSecElement = await CreateSecElement.findById(sectionId).populate('categoryName');
       return requestHandler.sendSuccess(
         res,
         `Element list proccessed successfully`,
