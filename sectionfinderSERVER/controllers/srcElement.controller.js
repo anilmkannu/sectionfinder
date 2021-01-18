@@ -119,7 +119,7 @@ const {CreateSecElement,SecCategory} = require('../models/secElements');
       if (!exit) {
         return requestHandler.genericError(res, `Section Not Found`, 404)();
       }
-      const getSecElement = await CreateSecElement.findById(sectionId).populate('categoryName');
+      const getSecElement = await CreateSecElement.findOne({_id : sectionId}).populate('categoryName');
       return requestHandler.sendSuccess(
         res,
         `Element list proccessed successfully`,
@@ -173,7 +173,47 @@ const {CreateSecElement,SecCategory} = require('../models/secElements');
       return requestHandler.sendError(req, res, err);
     }
   });
+  /******************************************
+   * functionName: search by text
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:29/12/2020
+   ********************************************/
+  (exports.searchElementById = async (req, res) => {
+    try {
+      var pageNo = parseInt(req.query.pageNo) || 0;
+      var size = parseInt(req.query.pageSize) || 4;
+      var sectionId = req.query.sectionId;
+      var query = {};
+      if(pageNo < 0 || pageNo === 0) {
+            response = {"error" : true,"message" : "invalid page number, should start with 1"};
+            return res.json(response)
+            return requestHandler.sendSuccess(
+              response,
+              `invalid page number, should start with 1`,
+              405
+            )
+      }
+      const skip = size * (pageNo - 1)
+      const limit = size
+      const getSecElement = await CreateSecElement.find({_id: sectionId}).sort({ updatedAt: -1 }).skip(skip).limit(limit);
+      const totalCount = await CreateSecElement.countDocuments({});
+      return requestHandler.sendSuccess(
+        res,
+        `Element list proccessed successfully`,
+        200
+      )({
+        data: getSecElement,
+        totalCount:totalCount,
+        pageNo:pageNo,
+        pageSize:getSecElement.length
 
+      });
+    } catch (err) {
+      return requestHandler.sendError(req, res, err);
+    }
+  });
 
   /**
  * getSection will get info of requested plugin.

@@ -14,7 +14,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
     "Search and get inspired by finding design Components online.";
 
   thumItemListing: any;
-
+  categoryName: any;
   browseElement: any;
 
   itemTap: any;
@@ -23,6 +23,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
   pageSize: number;
   config: any;
   totalCount: number;
+  categoryData: any;
 
   constructor(
     private router: Router,
@@ -35,12 +36,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
     this.pageNo = 1;
     this.pageSize = 3;
     this.getDashBoardData();
-    this.categoryService.categoryElementListing().subscribe((res) => {
-      let resdata = <any>res;
-      if (resdata.type == "success") {
-        this.browseElement = resdata.data;
-      }
-    });
+    this.getCategory();
     this.config = {
       itemsPerPage: this.pageSize,
       currentPage: this.pageNo,
@@ -55,7 +51,10 @@ export class MainPageComponent implements OnInit, OnDestroy {
    * date:10/01/2021
    ********************************************/
   getDashBoardData() {
-    this.ThumbhomepagelistingService.thumbListing(this.pageNo,this.pageSize).subscribe((res) => {
+    this.ThumbhomepagelistingService.thumbListing(
+      this.pageNo,
+      this.pageSize
+    ).subscribe((res) => {
       let resdata = <any>res;
       if (resdata.type == "success") {
         this.thumItemListing = resdata.data;
@@ -75,6 +74,22 @@ export class MainPageComponent implements OnInit, OnDestroy {
    * owner: Sushil Yadav
    * date:10/01/2021
    ********************************************/
+  getCategory() {
+    this.categoryService.categoryElementListing().subscribe((res) => {
+      let resdata = <any>res;
+      if (resdata.type == "success") {
+        this.categoryData = resdata.data;
+      }
+    });
+  }
+
+  /******************************************
+   * functionName: get Category Element
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:10/01/2021
+   ********************************************/
   itemBtn(sectionId) {
     console.log(["/productdetails/", sectionId]);
     this.router.navigate(["/productdetails/", sectionId]);
@@ -82,10 +97,61 @@ export class MainPageComponent implements OnInit, OnDestroy {
     //  this.itemTap = index;
     //  console.log(this.itemTap);
   }
+
+  /******************************************
+   * functionName: get Category Element
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:10/01/2021
+   ********************************************/
+  changeCategory(e) {
+    console.log(this.categoryName);
+    this.searchElementById(this.categoryName._id);
+  }
+  /******************************************
+   * functionName: get Category Element
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:10/01/2021
+   ********************************************/
   pageChanged(pageChangeItem) {
     this.pageNo = pageChangeItem;
     this.getDashBoardData();
   }
 
+  /******************************************
+   * functionName: get Category Element
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:10/01/2021
+   ********************************************/
+  searchElementById(sectionId) {
+    this.ThumbhomepagelistingService.searchElement(
+      this.pageNo,
+      this.pageSize,
+      sectionId
+    ).subscribe((res) => {
+      let resdata = <any>res;
+      if (resdata.type == "success") {
+        this.thumItemListing = resdata.data;
+        this.totalCount = resdata.totalCount;
+        this.config = {
+          itemsPerPage: this.pageSize,
+          currentPage: this.pageNo,
+          totalItems: this.totalCount,
+        };
+      }
+    });
+  }
+  /******************************************
+   * functionName: get Category Element
+   * input: {}
+   * output: JSON
+   * owner: Sushil Yadav
+   * date:10/01/2021
+   ********************************************/
   ngOnDestroy(): void {}
 }

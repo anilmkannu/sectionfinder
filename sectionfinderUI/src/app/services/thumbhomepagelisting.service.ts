@@ -23,6 +23,11 @@ constructor(
   public thumbListing(pageNo,pageSize){
     return this.http.get(`${this.getAppBaseUrl()}${'api/section/element/list/'}`+ '?pageNo=' +pageNo +'&pageSize='+pageSize)
   }
+
+  public searchElement(pageNo,pageSize,sectionId){
+    return this.http.get(`${this.getAppBaseUrl()}${'api/section/element/search/'}`+ '?pageNo=' +pageNo +'&pageSize='+pageSize+'&sectionId='+ sectionId)
+  }
+
 }
 
 

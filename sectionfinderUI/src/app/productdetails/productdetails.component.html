@@ -37,17 +37,17 @@
 
 
 <div class="row mt-5 height">
-    <h1> {{thumbHomeItem.categoryName?.name}} by {{thumbHomeItem.websiteName}}</h1>    
+    <h1> {{thumbHomeItem?.categoryName?.name}} by {{thumbHomeItem?.websiteName}}</h1>    
     <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-1">
        <div class="border border-success p-3">
-           <img  src="{{thumbHomeItem.imageName}}" class="img-responsive" height="570" width="820">
+           <img  src="{{thumbHomeItem?.imageName}}" class="img-responsive" height="570" width="820">
        </div>
     </div>
     <div class="col-lg-3 col-md-3">
-            <a href="{{thumbHomeItem.url}}" target="_blank" class="launch-btn mb-4 mt-3"><span>Launch</span></a>
-            <p class="mt-4">Courtesy : <a href="https://{{thumbHomeItem.url}}" target="_blank" class="text-danger">{{thumbHomeItem.url}}</a></p>
+            <a href="{{thumbHomeItem?.url}}" target="_blank" class="launch-btn mb-4 mt-3"><span>Launch</span></a>
+            <p class="mt-4">Courtesy : <a href="https://{{thumbHomeItem?.url}}" target="_blank" class="text-danger">{{thumbHomeItem?.url}}</a></p>
             <!-- <p>Element : <div class="border border-dark p-1 rounded"> Menu </div> </p> -->
-            <p class="mt-4 p-2">Element : <span class="border border-secondary p-1 rounded"> {{thumbHomeItem.categoryName?.name}} </span></p>
+            <p class="mt-4 p-2">Element : <span class="border border-secondary p-1 rounded"> {{thumbHomeItem?.categoryName?.name}} </span></p>
 
 
       </div>

@@ -38,5 +38,6 @@ router.get('/section/element/list', secEleController.getSrcElement);
 router.get('/section/category/list', secEleController.getSecCategory);
 router.get('/section/element/list/:sectionId', secEleController.getSrcElementById);
 router.get('/section/element/search/list/', secEleController.searchElementByText);
+router.get('/section/element/search/', secEleController.searchElementById);
 
 module.exports = router;
