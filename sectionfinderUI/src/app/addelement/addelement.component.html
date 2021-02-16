@@ -13,7 +13,7 @@
 
             <div class="form-group">
                     <label for="category">Category</label>
-                    <select class="custom-select" (change)="changeCategory($event)" formControlName="categoryName">
+                    <select class="form-control" (change)="changeCategory($event)" formControlName="categoryName">
                       <option value="" disabled>Choose your city</option>
                       <option *ngFor="let cat of categoryData" [ngValue]="cat">{{cat.name}}</option>
                    </select>

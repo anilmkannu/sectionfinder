@@ -34,7 +34,7 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.pageNo = 1;
-    this.pageSize = 3;
+    this.pageSize = 4;
     this.getDashBoardData();
     this.getCategory();
     this.config = {
