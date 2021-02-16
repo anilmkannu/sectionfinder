@@ -16,6 +16,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { FooterComponent } from './footer/footer.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -30,6 +31,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AddelementComponent,
     ProductdetailsComponent,
     FooterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

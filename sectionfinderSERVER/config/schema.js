@@ -23,6 +23,7 @@ module.exports = {
           },
         },
       },
+
       creatAdmin: {
         type: "object",
         properties: {
@@ -34,14 +35,14 @@ module.exports = {
             required: true,
           },
           lastName: {
-            errExplain: "First Name is required",
+            errExplain: "Lost Name is required",
             type: "string",
             minLength: 2,
             maxLength: 30,
             required: true,
           },
           email: {
-            errExplain: "Last Name is required",
+            errExplain: "email is required",
             type: "string",
             minLength: 2,
             maxLength: 30,
@@ -54,29 +55,30 @@ module.exports = {
             maxLength: 30,
             required: true,
           },
-          startDate: {
-            errExplain: "Start Date is required",
-            type: "string",
-            minLength: 8,
-            maxLength: 10,
-            required: true,
-          },
-          endDate: {
-            errExplain: "End Date is required",
-            type: "string",
-            minLength: 8,
-            maxLength: 10,
-            required: true,
-          },
-          project: {
-            errExplain: "Project is required",
-            type: "string",
-            minLength: 2,
-            maxLength: 100,
-            required: true,
-          },
+          // startDate: {
+          //   errExplain: "Start Date is required",
+          //   type: "string",
+          //   minLength: 8,
+          //   maxLength: 10,
+          //   required: false,
+          // },
+          // endDate: {
+          //   errExplain: "End Date is required",
+          //   type: "string",
+          //   minLength: 8,
+          //   maxLength: 10,
+          //   required: false,
+          // },
+          // project: {
+          //   errExplain: "Project is required",
+          //   type: "string",
+          //   minLength: 2,
+          //   maxLength: 100,
+          //   required: false,
+          // },
         },
       },
+
       signUp: {
         type: "object",
         properties: {
@@ -124,6 +126,7 @@ module.exports = {
           },
         },
       },
+
     },
   },
 

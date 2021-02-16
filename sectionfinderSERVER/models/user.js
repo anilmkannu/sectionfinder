@@ -9,8 +9,8 @@ const userSchema = mongoose.Schema(
         email: {type: String, required: true},
         project: {type: String, required: false},  
         password: {type: String, required: true}, 
-        startDate : {type: String, required: true},
-        endDate : {type: String, required: true},
+        startDate : {type: String, required: false},
+        endDate : {type: String, required: false},
       },
       { timestamps: true }
     );

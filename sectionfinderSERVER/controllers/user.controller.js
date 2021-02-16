@@ -11,8 +11,7 @@ const { Console } = require("winston/lib/winston/transports");
 const logger = new Logger();
 const requestHandler = new RequestHandler(logger);
 const userJSON = require("../config/schema").UserController.userJSON;
-const validationSchema = require("../utils/JsonSchemaValidator")
-  .validationSchema;
+const validationSchema = require("../utils/JsonSchemaValidator").validationSchema;
 /******************************************
  * functionName:login of users
  * input: {}
@@ -33,7 +32,7 @@ const validationSchema = require("../utils/JsonSchemaValidator")
   if (!validation) {
     const user = await UserReg.findOne({ email: metaSchema.email });
     if (!user) {
-      return requestHandler.sendError(res, `User doesn't exists`,"error", 404)();
+      return requestHandler.sendError(req, res,`User doesn't exists`, 404)();
     } else {
       const isPassMatch = await bcrypt.compare(
         metaSchema.password,
@@ -137,17 +136,17 @@ const validationSchema = require("../utils/JsonSchemaValidator")
             firstName: metaSchema.firstName,
             lastName: metaSchema.lastName,
             email: metaSchema.email,
-            project: metaSchema.project,
+           // project: metaSchema.project,
             password: metaSchema.password,
-            startDate: metaSchema.startDate,
-            endDate: metaSchema.endDate,
+          //  startDate: metaSchema.startDate,
+          //  endDate: metaSchema.endDate,
           }).save()
           let dataObj = {};          
-          const role_id = await RolesSchema.findOne({ code : 'ADMIN' });
-          console.log(role_id.toObject().id);
-          const UserRolesData =  await new UserRolesSchema({userId: userReg._id, roleId : role_id.id}).save();
-          dataObj.data = UserRolesData;
-          requestHandler.sendSuccess(res, `Admin record Created successfully...!!!`, 200, "success", dataObj)();
+          // const role_id = await RolesSchema.findOne({ code : 'ADMIN' });
+          // console.log(role_id.toObject().id);
+          // const UserRolesData =  await new UserRolesSchema({userId: userReg._id, roleId : role_id.id}).save();
+          // dataObj.data = UserRolesData;
+          requestHandler.sendSuccess(res, `create validation response for User ID`, 200, "success", userReg)();
         }
         } catch (err) {
           return requestHandler.genericError( res, err.message, 404)(validation, validation);

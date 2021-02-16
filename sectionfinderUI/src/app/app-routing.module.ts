@@ -6,6 +6,7 @@ import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component'
 import { MainPageComponent } from './main-page/main-page.component';
 import { AddelementComponent } from './addelement/addelement.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
@@ -14,9 +15,8 @@ const routes: Routes = [
   { path: 'termsofuse', component: TermsofuseComponent },
   { path: 'privacypolicy', component: PrivacypolicyComponent },
   { path: 'addelement', component: AddelementComponent },
-  { path: 'productdetails/:sectionId', component: ProductdetailsComponent }
-
-
+  { path: 'productdetails/:sectionId', component: ProductdetailsComponent },
+  { path: 'login', component: UserComponent }
 
 ];
 
